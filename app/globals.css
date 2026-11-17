@@ -1,0 +1,32 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{--ink:#050505;--mute:#A1A1AA;--volt:#4D7CFF;--viol:#8B5CF6}
+html{background:var(--ink)}body{color:#fff;background:var(--ink);font-family:"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
+.grid-bg{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000,transparent 75%)}
+.glass{background:#ffffff0d;border:1px solid #ffffff1c;backdrop-filter:blur(14px);border-radius:20px}
+.h1{font-size:clamp(3rem,9vw,7.5rem);font-weight:800;letter-spacing:-.04em;line-height:.92}
+.h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.btn{display:inline-block;padding:.9rem 1.6rem;border-radius:99px;font-weight:600}
+.btn-p{background:linear-gradient(120deg,var(--volt),var(--viol))}.btn-g{border:1px solid #ffffff33}
+.sec{padding:7rem 1.25rem;max-width:1200px;margin:auto}
+.dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 #22c55e99;animation:pulse 1.8s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px #22c55e00}}
+.cursor{position:fixed;top:0;left:0;width:34px;height:34px;margin:-17px;border:1px solid #fff9;border-radius:50%;pointer-events:none;z-index:99;mix-blend-mode:difference}
+.rail{display:flex;gap:1.5rem;width:max-content;padding:0 1.25rem}.card{width:min(80vw,420px);padding:1.25rem}
+.frame{width:min(70vw,380px);aspect-ratio:1;border-radius:50%;padding:10px;background:conic-gradient(from 200deg,var(--volt),var(--viol),var(--volt));box-shadow:0 40px 90px #4d7cff40}
+@media(hover:none){.cursor{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:focus-visible{outline:2px solid var(--volt);outline-offset:3px}
+
+.aurora i{position:fixed;border-radius:50%;filter:blur(110px);opacity:.35;z-index:-2;animation:drift 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){top:-15%;left:-10%;width:45vw;height:45vw;background:var(--volt)}.aurora i:nth-child(2){bottom:-15%;right:-10%;width:40vw;height:40vw;background:var(--viol);animation-delay:-9s}
+@keyframes drift{to{transform:translate(8vw,6vh) scale(1.2)}}
+.gtext{background:linear-gradient(110deg,#fff,#4D7CFF,#8B5CF6,#fff);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:250%}}
+.marq{display:flex;gap:3rem;width:max-content;animation:mq 30s linear infinite}.marq span{display:flex;align-items:center;gap:3rem;white-space:nowrap}
+.marq i{width:8px;height:8px;border-radius:50%;background:var(--viol)}@keyframes mq{to{transform:translateX(-50%)}}
+.outline{-webkit-text-stroke:1px #ffffff40;color:transparent}
+.ring{position:absolute;width:min(95vw,520px);aspect-ratio:1;border-radius:50%;border:1px dashed #ffffff30;animation:spin 40s linear infinite;top:2%}
+.ring::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--volt);box-shadow:0 0 20px var(--volt)}
+@keyframes spin{to{transform:rotate(360deg)}}.orb{position:absolute;padding:.4rem .9rem;font-size:.8rem;z-index:2;animation:flt 5s ease-in-out infinite}
+@keyframes flt{50%{transform:translateY(-14px)}}
+.spot{position:relative;overflow:hidden}.spot::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),#4d7cff33,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.spot:hover::before{opacity:1}
